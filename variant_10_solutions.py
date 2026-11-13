@@ -32,3 +32,8 @@ def save_result_to_file(result):
             file.write(f'{item[0]:^20}')
             file.write(f"{f'{item[1]:0<15}':^20}\n")
         file.write(f'Final result: f(x)=0 at x={result[0]}')
+
+def main(interval=(0, 1), epsilon=0.0002, func=lambda x: math.exp(-x)-x**3):
+    result=target_function(interval, epsilon, func)
+    print(result)
+    save_result_to_file(result)
